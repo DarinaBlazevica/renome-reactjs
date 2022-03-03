@@ -1,6 +1,6 @@
-import img1 from "../assets/images/about_img_1.png";
-import img2 from "../assets/images/about_img_2.png";
-import "../styles/About.scss";
+import img1 from "../../assets/images/about_img_1.png";
+import img2 from "../../assets/images/about_img_2.png";
+import "./About.scss";
 
 const About = ({ data }) => {
   return (
