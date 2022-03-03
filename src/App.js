@@ -1,9 +1,9 @@
 import About from './components/About'
-import "./index.css"
+import data from "./structure.json"
 
-function App() {
+const App = () => {
   return (
-        <About />
+        <About data = {data}/>
   );
 }
 export default App;
