@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Axis";
+    src: url(/components/atoms/assets/fonts/Axis.woff2);
+  }
+
+  $axis: "Axis";
+  $font-size-heading: 38px;
+  $font-weight: 700;
+  $black: #000;
+
+  .heading {
+      font-family: $axis;
+      font-size: $font-size-heading;
+      font-weight: $font-weight;
+      text-transform: lowercase;
+      letter-spacing: 8px;
+  }

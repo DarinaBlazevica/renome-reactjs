@@ -1,5 +1,5 @@
-import About from './components/About/About'
-import Gallery from './components/Gallery/Gallery'
+import About from './components/organisms/About/About'
+import Gallery from './components/organisms/Gallery/Gallery'
 import data from "./structure.json"
 
 const App = () => {
