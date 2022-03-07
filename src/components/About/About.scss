@@ -1,25 +1,36 @@
 @font-face {
-  font-family: 'Montserrat';
-  src: url(/assets/fonts/Montserrat-Regular.ttf);      
+  font-family: "Montserrat";
+  src: url(/assets/fonts/Montserrat-Regular.ttf);
 }
 
 @font-face {
-  font-family: 'Pacifico';
+  font-family: "Pacifico";
   src: url(/assets/fonts/Pacifico-Regular.ttf);
 }
 @font-face {
-  font-family: 'Axis';
+  font-family: "Axis";
   src: url(/assets/fonts/Axis.woff2);
 }
 
-$montserrat: 'Montserrat';
-$axis: 'Axis';
-$pacifico: 'Pacifico';
+$montserrat: "Montserrat";
+$axis: "Axis";
+$pacifico: "Pacifico";
 $black: #000;
 $subheading-color: #985e5b;
 $font-size-heading: 38px;
 $font-size-subheading: 11px;
 $font-weight: 700;
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.about {
+  margin: 70px 10px 0;
+}
 
 .about-text-container {
   margin-top: 60%;
@@ -33,7 +44,7 @@ $font-weight: 700;
 
 .about__subheading {
   font-family: $axis;
-  color:$subheading-color;
+  color: $subheading-color;
   text-transform: uppercase;
   font-size: $font-size-subheading;
 }
@@ -44,7 +55,7 @@ $font-weight: 700;
   line-height: 30px;
   font-weight: $font-weight;
   hyphens: auto;
- text-align: justify;
+  text-align: justify;
 }
 
 .about__image2 {
