@@ -1,13 +1,11 @@
-import img1 from "../../atoms/assets/images/about_img_1.png";
-import img2 from "../../atoms/assets/images/about_img_2.png";
 import "./AboutImg.scss"
 
-const AboutImg =()=> {
+const AboutImg = ({ data }) => {
     return(
-    <div className="about-image-container">
-        <img className="about__image2" id="house" src={img2} alt="house" />
-        <img className="about__image1" id="window" src={img1} alt="window" />
-      </div>
+    <div className="about-image-container">              
+      <img className="about__image2"src={ data.about.aboutImages[1].path} alt="about"/>   
+      <img className="about__image1"src={ data.about.aboutImages[0].path} alt="about"/>    
+    </div>
     );
 }
 export default AboutImg;

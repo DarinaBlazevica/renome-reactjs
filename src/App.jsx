@@ -4,12 +4,10 @@ import data from "./structure.json"
 
 const App = () => {
   return (
-    <div className="About">
+    <div className="wrapper">
         <About data = {data}/>
-        <div className="Gallery">
-          <Gallery data ={data}/>
-        </div>
-      </div>
+        <Gallery data ={data}/>
+    </div>
   );
 }
 export default App;

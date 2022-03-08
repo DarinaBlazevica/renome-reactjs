@@ -6,7 +6,7 @@ import "./About.scss";
 const About = ({ data }) => {
   return (
     <div className="about">
-      <AboutImg />
+      <AboutImg data={data}/>
       <div className="about-text-container">
         <Heading  data = {data.about.title}/>
         <Subheading data ={data.about.subTitle}/>

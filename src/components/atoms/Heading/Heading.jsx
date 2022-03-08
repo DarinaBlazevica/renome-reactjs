@@ -1,6 +1,6 @@
 import "./Heading.scss";
 
-const Heading =({ data })=>{
+const Heading = ({ data }) =>{
 
     return(
         <h1 className="heading">{data}</h1>

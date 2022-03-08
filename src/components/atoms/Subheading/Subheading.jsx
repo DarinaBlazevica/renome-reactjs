@@ -1,6 +1,6 @@
 import "./Subheading.scss";
 
-const Subheading =({data})=> {
+const Subheading = ({ data }) => {
     return(
         <h2 className="subheading">{data}</h2>
     );
