@@ -1,16 +1,14 @@
-import Heading from "../../atoms/Heading/Heading";
-import Subheading from "../../atoms/Subheading/Subheading";
 import AboutImg from "../../molecules/AboutImg/AboutImg";
 import "./About.scss";
 
-const About = ({ data }) => {
-  return (
-    <div className="about">
-      <AboutImg data={data}/>
+const About = (props) => {
+  return ( 
+    <div className="about"> 
+      <AboutImg image = {props.data.about.aboutImages}/>
       <div className="about-text-container">
-        <Heading  data = {data.about.title}/>
-        <Subheading data ={data.about.subTitle}/>
-        <p className="about__paragraph">{data.about.text}</p>
+        <h1 className="heading">{props.data.about.title}</h1>
+        <h2 className="subheading">{props.data.about.subTitle}</h2>
+        <p className="about__paragraph">{props.data.about.text}</p>
       </div>
     </div>
   );

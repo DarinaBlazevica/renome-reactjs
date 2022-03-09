@@ -1,20 +1,9 @@
-@font-face {
-  font-family: "Montserrat";
-  src: url(/components/atoms/assets/fonts/Montserrat-Regular.ttf);
-}
 
 $montserrat: "Montserrat";
 $font-weight: 700;
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
 .about {
-  margin: 70px 10px 0;
+  margin: 70px 10px 70px ;
 }
 
 .about-text-container {

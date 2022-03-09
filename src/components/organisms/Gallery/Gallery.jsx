@@ -1,15 +1,13 @@
-import "./Gallery.scss";
-import Heading from "../../atoms/Heading/Heading";
-import Subheading from "../../atoms/Subheading/Subheading";
 import GalleryGrid from "../../molecules/GalleryGrid/GalleryGrid";
+import "./Gallery.scss";
 
-const Gallery =( {data} )=> {
+const Gallery =(props)=> {
 
     return(
       <div className="gallery">
-        <Heading  data = {data.gallery.title}/>
-        <Subheading data ={data.gallery.subTitle}/>
-        <GalleryGrid data ={data}/>     
+        <h1 className="heading">{props.data.gallery.title}</h1>
+        <h2 className="subheading">{props.data.gallery.subTitle}</h2>
+        <GalleryGrid galleryGrid ={props.data.gallery.galleryImages}/>
       </div>
     );
 }

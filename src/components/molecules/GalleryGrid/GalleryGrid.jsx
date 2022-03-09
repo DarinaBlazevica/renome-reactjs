@@ -1,10 +1,10 @@
 
 import "./GalleryGrid.scss";
 
-const GalleryGrid = ({ data }) => {
+const GalleryGrid = (props) => {
     return (  
       <div className="gallery__images">
-          {data.gallery.galleryImages.map((item,i) =>
+          {props.galleryGrid.map((item,i) =>
           <div key={i}>
             <img src={item.path} alt="galleryimg" />
           </div>
