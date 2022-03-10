@@ -1,0 +1,20 @@
+
+$montserrat: "Montserrat";
+$font-weight: 700;
+
+.about {
+  margin: 70px 10px 70px ;
+}
+
+.about-text-container {
+  margin-top: 60%;
+}
+
+.about__paragraph {
+  font-family: $montserrat;
+  font-size: 13px;
+  line-height: 30px;
+  font-weight: $font-weight;
+  hyphens: auto;
+  text-align: justify;
+}
