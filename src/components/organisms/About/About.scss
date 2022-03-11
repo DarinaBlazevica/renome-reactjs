@@ -1,9 +1,8 @@
-
 $montserrat: "Montserrat";
 $font-weight: 700;
 
 .about {
-  margin: 70px 10px 70px ;
+  margin: 70px 10px 70px;
 }
 
 .about-text-container {
@@ -17,4 +16,17 @@ $font-weight: 700;
   font-weight: $font-weight;
   hyphens: auto;
   text-align: justify;
+}
+
+.about__image2 {
+  position: relative;
+  width: 80%;
+  left: 20%;
+}
+
+.about__image1 {
+  width: 80%;
+  position: absolute;
+  margin-top: 40%;
+  left: 10px;
 }

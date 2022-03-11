@@ -6,7 +6,10 @@
   font-family: "Montserrat";
   src: url(/components/atoms/assets/fonts/Montserrat-Regular.ttf);
 }
-
+@font-face {
+    font-family: "Pacifico";
+    src: url(/components/atoms/assets/fonts/Pacifico-Regular.ttf);
+}
 
 $axis: "Axis";
 $subheading-color: #985e5b;
@@ -14,6 +17,7 @@ $font-size-subheading: 12px;
 $font-weight: 700;
 $font-size-heading: 38px;
 $black: #000;
+$pacifico: "Pacifico";
 
 html,
 body {
@@ -37,4 +41,8 @@ body {
   color: $subheading-color;
   text-transform: uppercase;
   font-weight: $font-weight;
+}
+
+.renome {
+  font-family: $pacifico;
 }

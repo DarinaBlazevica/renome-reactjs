@@ -104,5 +104,24 @@
             "path": "images/gallery_img_4.png"
           }
         ]
+      },
+
+      "footer": {
+        "followUs": "follow us:",
+        "title": "Renome",
+        "copyright" : "COPYRIGHT 2022 RENOME BY ESTETIQ",
+        "socialMedia": [
+          { 
+            "path": "svg_icons/facebook-square.svg"
+          },
+
+          { 
+            "path": "svg_icons/twitter-square.svg"
+          },
+
+          { 
+            "path": "svg_icons/google-plus-square.svg"         
+          }
+        ]
       }
     }
