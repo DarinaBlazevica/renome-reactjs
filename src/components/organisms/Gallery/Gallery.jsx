@@ -4,9 +4,9 @@ import "./Gallery.scss";
 const Gallery = (props) => {
   return (
     <div className="gallery">
-      <h1 className="heading">{props.data.gallery.title}</h1>
-      <h2 className="subheading">{props.data.gallery.subTitle}</h2>
-      <GalleryGrid galleryGrid={props.data.gallery.galleryImages} />
+      <h1 className="heading">{props.gallery.title}</h1>
+      <h2 className="subheading">{props.gallery.subTitle}</h2>
+      <GalleryGrid galleryGrid={props.gallery.galleryImages} />
     </div>
   );
 };

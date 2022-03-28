@@ -52,19 +52,19 @@
           "title": "Made with love",
           "subTitle": "for you",
           "altTag": "eggs and chicken",
-          "path": "/assets/images/carousel_img_1.png"
+          "path": "images/carousel_img_1.png"
         },
         {
           "title": "Made with hate",
           "subTitle": "for myself",
           "altTag": "something more",
-          "path": "/assets/images/carousel_img_2.png"
+          "path": "images/carousel_img_2.png"
         },
         {
           "title": "Oranges and laptops",
           "subTitle": "for everyone",
           "altTag": "oranges and laptops",
-          "path": "/assets/images/carousel_img_3.png"
+          "path": "images/carousel_img_3.png"
         }
       ],
       "about": {
