@@ -1,5 +1,12 @@
 .carousel-container {
+  width: 100%;
+  position: relative;
+}
+
+.carousel-container__slider {
   display: flex;
+  position: relative;
+  width: 100%;
 }
 
 .carousel-container__carousel {
@@ -9,7 +16,7 @@
 }
 
 .carousel-container__text {
-  top: 40%;
+  margin-top: 60%;
   position: absolute;
   color: white;
   width: 100%;
@@ -26,15 +33,16 @@
   letter-spacing: 3px;
 }
 
-.carousel-container__text .heading--oranges{
+.carousel-container__text .heading--oranges {
   padding-right: 30px;
   top: 20px;
   left: 18px;
-  white-space:pre-wrap;
+  white-space: pre-wrap;
   position: absolute;
   font-size: 28px;
   letter-spacing: 3px;
 }
+
 .carousel-container__text .subheading {
   padding-right: 100px;
   top: 55px;
@@ -49,6 +57,10 @@
 .carousel-container__carousel img {
   width: 100%;
   position: absolute;
+}
+
+.carousel-container__slider {
+  position: relative;
 }
 
 .carousel-container__text .subheading--oranges {
@@ -124,6 +136,7 @@
   transform: translateX(0%);
   transition: transform 2000ms ease-in-out;
 }
+
 .slide_text-left-exit {
   transform: translateX(0%);
 }
