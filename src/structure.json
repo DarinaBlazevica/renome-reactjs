@@ -61,8 +61,8 @@
           "path": "images/carousel_img_2.png"
         },
         {
-          "title": "Oranges and laptops",
-          "subTitle": "for everyone",
+          "title": "Oranges and     laptops",
+          "subTitle": "for everyone", 
           "altTag": "oranges and laptops",
           "path": "images/carousel_img_3.png"
         }

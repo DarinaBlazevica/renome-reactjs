@@ -7,6 +7,7 @@ const Carousel = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [imageDirection, setImageDirection] = useState("slide-right");
   const [textDirection, setTextDirection] = useState("slide_text-right");
+  let styleLast = "carousel-container__text .subheading--oranges";
 
   const slidePrev = () => {
     const nextIndex = activeIndex - 1;
@@ -55,14 +56,24 @@ const Carousel = (props) => {
             timeout={1000}
             classNames={textDirection}
           >
-            <h1 className="heading">{props.carousel[activeIndex].title} </h1>
+            <h1 className={props.carousel[activeIndex].title ===
+                props.carousel[2].title
+                  ? "heading--oranges"
+                  : "heading"} >{props.carousel[activeIndex].title}</h1>
           </CSSTransition>
           <CSSTransition
             key={props.carousel[activeIndex].subTitle}
             timeout={1000}
             classNames={textDirection}
           >
-            <h2 className="subheading">
+            <h2
+              className={
+                props.carousel[activeIndex].subTitle ===
+                props.carousel[2].subTitle
+                  ? "subheading--oranges"
+                  : "subheading"
+              }
+            >
               {props.carousel[activeIndex].subTitle}
             </h2>
           </CSSTransition>

@@ -7,8 +7,8 @@
   src: url(/components/atoms/assets/fonts/Montserrat-Regular.ttf);
 }
 @font-face {
-    font-family: "Pacifico";
-    src: url(/components/atoms/assets/fonts/Pacifico-Regular.ttf);
+  font-family: "Pacifico";
+  src: url(/components/atoms/assets/fonts/Pacifico-Regular.ttf);
 }
 
 $axis: "Axis";
@@ -41,6 +41,22 @@ body {
   color: $subheading-color;
   text-transform: uppercase;
   font-weight: $font-weight;
+}
+
+.subheading--oranges {
+  font-family: $axis;
+  font-size: $font-size-subheading;
+  color: $subheading-color;
+  text-transform: uppercase;
+  font-weight: $font-weight;
+}
+
+.heading--oranges {
+  font-family: $axis;
+  font-size: $font-size-heading;
+  font-weight: $font-weight;
+  text-transform: lowercase;
+  letter-spacing: 8px;
 }
 
 .renome {
