@@ -1,5 +1,5 @@
 import "./Arrow.scss";
-const Arrow = ({slideNext, slidePrev }) => {
+const Arrow = ({slideNext,slidePrev}) => {
 
   return (
     <div className="carousel__arrow">
