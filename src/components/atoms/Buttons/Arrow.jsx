@@ -1,5 +1,6 @@
 import "./Arrow.scss";
-const Arrow = ({slideNext, slidePrev}) => {
+const Arrow = ({slideNext, slidePrev }) => {
+
   return (
     <div className="carousel__arrow">
       <button type="button" className="carousel__arrow--left" id="left-arrow" onClick={slidePrev}>

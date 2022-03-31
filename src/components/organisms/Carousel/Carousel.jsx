@@ -22,7 +22,7 @@ const Carousel = (props) => {
   const slideNext = () => {
     setActiveIndex((activeIndex + 1) % props.carousel.length);
     setImageDirection("slide-right");
-    setTextDirection("slide_text-right");
+    setTextDirection("slide_text-right");    
   };
 
   const cloneImage = (imageDirection) => (child) =>
@@ -55,7 +55,7 @@ const Carousel = (props) => {
             timeout={1000}
             classNames={textDirection}
           >
-            <h1 className="heading">{props.carousel[activeIndex].title}</h1>
+            <h1 className="heading">{props.carousel[activeIndex].title} </h1>
           </CSSTransition>
           <CSSTransition
             key={props.carousel[activeIndex].subTitle}
@@ -68,7 +68,7 @@ const Carousel = (props) => {
           </CSSTransition>
         </TransitionGroup>
       </div>
-      <Arrow slideNext={() => slideNext()} slidePrev={() => slidePrev()} />
+      <Arrow slideNext={() => slideNext()} slidePrev={() => slidePrev() } />
     </div>
   );
 };
