@@ -7,10 +7,7 @@ const Carousel = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [imageDirection, setImageDirection] = useState("slide-right");
   const [textDirection, setTextDirection] = useState("slide_text-right");
-  const [position, setPosition] = useState(
-    "carousel__container__carousel-image--active"
-  );
-
+  
   const slidePrev = () => {
     const nextIndex = activeIndex - 1;
     if (nextIndex < 0) {
@@ -19,15 +16,13 @@ const Carousel = (props) => {
       setActiveIndex(nextIndex);
     }
     setImageDirection("slide-left");
-    setTextDirection("slide_text-left");
-    setPosition("carousel__container__carousel-image--active");
+    setTextDirection("slide_text-left");;
   };
 
   const slideNext = () => {
     setActiveIndex((activeIndex + 1) % props.carousel.length);
     setImageDirection("slide-right");
     setTextDirection("slide_text-right");
-    setPosition("carousel__container__carousel-image--active");
   };
 
   const cloneImage = (imageDirection) => (child) =>
