@@ -1,0 +1,40 @@
+$border: 2px solid #fff;
+$background-color: Transparent;
+$width: 55px;
+$height: 55px;
+
+.carousel__arrow {
+  position: relative;
+  left: 18px;
+  bottom: 18px;
+  width: 130px;
+  margin-top: 110%
+}
+
+.carousel__arrow--right {
+  border: $border;
+  height: $height;
+  width: $width;
+  background-color: $background-color;
+}
+
+.carousel__arrow--left {
+  border: $border;
+  height: $height;
+  width: $width;
+  background-color: $background-color;
+}
+
+.carousel__space {
+  width: 15px;
+  display: inline-block;
+}
+
+.carousel__arrow img {
+    height: 28px;
+    width: 30px;
+}
+
+button {
+    padding-top: 5px;
+}   
