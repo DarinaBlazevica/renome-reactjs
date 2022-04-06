@@ -1,0 +1,77 @@
+$axis: "Axis";
+$montserrat : "Montserrat";
+$black: #000;
+$white: #fff;
+$hover: #d3d3d3;
+$subheading-color: #985e5b;
+$arial: Arial,
+sans-serif;
+$grey: #a7a7a7;
+
+
+.top-nav__menu {
+  display: none;
+}
+
+.show {
+  display: block;
+  width: 100%;
+  background-color: $white;
+  padding: 0 10px;
+  font-family: $axis;
+}
+
+.show a {
+  display: block;
+  padding: 20px 5px;
+  font-size: 12px;
+  font-family: $axis;
+  color: $black;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 1px solid $hover;
+  letter-spacing: 2px;
+}
+
+.show .menu__feature {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0px 5px 5px;
+}
+
+.show a:first-child {
+  display: flex;
+  font-family: $arial;
+  text-transform: none;
+  justify-content: space-between;
+  color: $grey;
+}
+
+.show a:last-child {
+  border-bottom: none;
+}
+
+.show a:hover {
+  color: $subheading-color;
+}
+
+.menu-feature__btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid $hover;
+  background-color: transparent;
+  margin-right: 10px;
+}
+
+.menu-feature__btn img {
+  width: 15px;
+  height: 13px;
+}
+
+.search-icon {
+  padding-right: 5px;
+  width: 15px;
+  height: 15px;
+}

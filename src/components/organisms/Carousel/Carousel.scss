@@ -1,21 +1,27 @@
 .carousel-container {
+  top: 65px;
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 
-.carousel-container__slider {
+.carousel-container__carousel { 
   display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.carousel-container__image-slider {
   position: relative;
   width: 100%;
 }
 
-.carousel-container__carousel {
+.carousel-container__image-slider img{
+  position: absolute;
   width: 100%;
-  height: 100%;
-  position: relative;
+  height: auto;
 }
-
-.carousel-container__text {
+.carousel-container__text-slider {
   margin-top: 60%;
   position: absolute;
   color: white;
@@ -23,7 +29,7 @@
   height: 20%;
 }
 
-.carousel-container__text .heading {
+.carousel-container__text-slider .heading {
   padding-right: 10px;
   top: 20px;
   left: 18px;
@@ -33,7 +39,7 @@
   letter-spacing: 3px;
 }
 
-.carousel-container__text .heading--oranges {
+.carousel-container__text-slider .heading--oranges {
   padding-right: 30px;
   top: 20px;
   left: 18px;
@@ -43,7 +49,7 @@
   letter-spacing: 3px;
 }
 
-.carousel-container__text .subheading {
+.carousel-container__text-slider .subheading {
   padding-right: 100px;
   top: 55px;
   left: 18px;
@@ -54,16 +60,8 @@
   letter-spacing: 2px;
 }
 
-.carousel-container__carousel img {
-  width: 100%;
-  position: absolute;
-}
 
-.carousel-container__slider {
-  position: relative;
-}
-
-.carousel-container__text .subheading--oranges {
+.carousel-container__text-slider .subheading--oranges {
   top: 85px;
   padding-right: 100px;
   left: 18px;

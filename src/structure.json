@@ -1,7 +1,15 @@
 {
+  "topnav" : 
+    {
+      "title": "Renome",
+      "cart" : "svg_icons/cart-shopping.svg",
+      "cart_content": "2",
+      "divider" : "|"
+    },  
       "menu": [
         {
-          "title": "Search"
+          "title": "Search...",
+          "path":"svg_icons/magnifying-glass-solid.svg"
         },
         {
           "title": "Home",
@@ -23,6 +31,7 @@
           "title": "Features",
           "isSubMenu": true,
           "url": "#",
+          "path" : "svg_icons/angle-right-solid-black.svg",
           "subMenu": [
             {
               "title": "One page",

@@ -37,21 +37,19 @@ const Carousel = (props) => {
 
   return (
     <div className="carousel-container">
-      <div className="carousel-container__slider">
-        <div className="carousel-container__carousel">
+      <div className="carousel-container__carousel">
+        <div className="carousel-container__image-slider">
           <TransitionGroup childFactory={cloneImage(imageDirection)}>
             <CSSTransition
               key={props.carousel[activeIndex].path}
               timeout={1000}
               classNames={imageDirection}
             >
-              <div className="carousel-container__slider">
                 <img src={props.carousel[activeIndex].path} alt="carousel"/>
-              </div>
             </CSSTransition>
           </TransitionGroup>
         </div>
-        <div className="carousel-container__text">
+        <div className="carousel-container__text-slider">
           <TransitionGroup childFactory={cloneText(textDirection)}>
             <CSSTransition
               key={props.carousel[activeIndex].title}
