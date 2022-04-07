@@ -8,7 +8,7 @@
     },  
       "menu": [
         {
-          "title": "Search...",
+          "title": "Search",
           "path":"svg_icons/magnifying-glass-solid.svg"
         },
         {

@@ -1,27 +1,27 @@
-.carousel-container {
+.carousel {
   top: 65px;
   width: 100%;
   position: relative;
   overflow: hidden;
 }
 
-.carousel-container__carousel { 
+.carousel__slider { 
   display: flex;
   width: 100%;
   position: relative;
 }
 
-.carousel-container__image-slider {
+.carousel__slider__image-slider {
   position: relative;
   width: 100%;
 }
 
-.carousel-container__image-slider img{
+.carousel__slider__image-slider img{
   position: absolute;
   width: 100%;
   height: auto;
 }
-.carousel-container__text-slider {
+.carousel__slider__text-slider {
   margin-top: 60%;
   position: absolute;
   color: white;
@@ -29,7 +29,7 @@
   height: 20%;
 }
 
-.carousel-container__text-slider .heading {
+.carousel__slider__text-slider .heading {
   padding-right: 10px;
   top: 20px;
   left: 18px;
@@ -39,7 +39,7 @@
   letter-spacing: 3px;
 }
 
-.carousel-container__text-slider .heading--oranges {
+.carousel__slider__text-slider .heading--oranges {
   padding-right: 30px;
   top: 20px;
   left: 18px;
@@ -49,7 +49,7 @@
   letter-spacing: 3px;
 }
 
-.carousel-container__text-slider .subheading {
+.carousel__slider__text-slider .subheading {
   padding-right: 100px;
   top: 55px;
   left: 18px;
@@ -61,7 +61,7 @@
 }
 
 
-.carousel-container__text-slider .subheading--oranges {
+.carousel__slider__text-slider .subheading--oranges {
   top: 85px;
   padding-right: 100px;
   left: 18px;

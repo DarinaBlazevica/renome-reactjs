@@ -4,9 +4,7 @@ $black: #000;
 $white: #fff;
 $hover: #d3d3d3;
 $subheading-color: #985e5b;
-$arial: Arial,
-sans-serif;
-$grey: #a7a7a7;
+$arial: Arial, sans-serif;
 
 
 .top-nav__menu {
@@ -19,6 +17,7 @@ $grey: #a7a7a7;
   background-color: $white;
   padding: 0 10px;
   font-family: $axis;
+  overflow-y: auto;
 }
 
 .show a {
@@ -43,10 +42,8 @@ $grey: #a7a7a7;
 
 .show a:first-child {
   display: flex;
-  font-family: $arial;
   text-transform: none;
   justify-content: space-between;
-  color: $grey;
 }
 
 .show a:last-child {
@@ -74,4 +71,17 @@ $grey: #a7a7a7;
   padding-right: 5px;
   width: 15px;
   height: 15px;
+}
+
+#search {
+  width: 50%;
+  border: none;
+  background-color: transparent;
+  letter-spacing: 2px;
+  font-weight: 700;
+  outline: none;
+}
+
+input[type="text" i] {
+  padding: 0;
 }

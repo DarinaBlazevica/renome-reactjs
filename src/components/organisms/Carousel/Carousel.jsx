@@ -4,23 +4,26 @@ import "./Carousel.scss";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const Carousel = (props) => {
+
+  const {carousel} = props;
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [imageDirection, setImageDirection] = useState("slide-right");
   const [textDirection, setTextDirection] = useState("slide_text-right");
-  
+
   const slidePrev = () => {
     const nextIndex = activeIndex - 1;
     if (nextIndex < 0) {
-      setActiveIndex(props.carousel.length - 1);
+      setActiveIndex(carousel.length - 1);
     } else {
       setActiveIndex(nextIndex);
     }
     setImageDirection("slide-left");
-    setTextDirection("slide_text-left");;
+    setTextDirection("slide_text-left");
   };
 
   const slideNext = () => {
-    setActiveIndex((activeIndex + 1) % props.carousel.length);
+    setActiveIndex((activeIndex + 1) % carousel.length);
     setImageDirection("slide-right");
     setTextDirection("slide_text-right");
   };
@@ -36,50 +39,50 @@ const Carousel = (props) => {
     });
 
   return (
-    <div className="carousel-container">
-      <div className="carousel-container__carousel">
-        <div className="carousel-container__image-slider">
+    <div className="carousel">
+      <div className="carousel__slider">
+        <div className="carousel__slider__image-slider">
           <TransitionGroup childFactory={cloneImage(imageDirection)}>
             <CSSTransition
-              key={props.carousel[activeIndex].path}
+              key={carousel[activeIndex].path}
               timeout={1000}
               classNames={imageDirection}
             >
-                <img src={props.carousel[activeIndex].path} alt="carousel"/>
+              <img src={carousel[activeIndex].path} alt="carousel" />
             </CSSTransition>
           </TransitionGroup>
         </div>
-        <div className="carousel-container__text-slider">
+        <div className="carousel__slider__text-slider">
           <TransitionGroup childFactory={cloneText(textDirection)}>
             <CSSTransition
-              key={props.carousel[activeIndex].title}
+              key={carousel[activeIndex].title}
               timeout={1000}
               classNames={textDirection}
             >
               <h1
                 className={
-                  props.carousel[activeIndex].title === props.carousel[2].title
+                  carousel[activeIndex].title === carousel[2].title
                     ? "heading--oranges"
                     : "heading"
                 }
               >
-                {props.carousel[activeIndex].title}
+                {carousel[activeIndex].title}
               </h1>
             </CSSTransition>
             <CSSTransition
-              key={props.carousel[activeIndex].subTitle}
+              key={carousel[activeIndex].subTitle}
               timeout={1000}
               classNames={textDirection}
             >
               <h2
                 className={
-                  props.carousel[activeIndex].subTitle ===
-                  props.carousel[2].subTitle
+                  carousel[activeIndex].subTitle ===
+                  carousel[2].subTitle
                     ? "subheading--oranges"
                     : "subheading"
                 }
               >
-                {props.carousel[activeIndex].subTitle}
+                {carousel[activeIndex].subTitle}
               </h2>
             </CSSTransition>
           </TransitionGroup>
