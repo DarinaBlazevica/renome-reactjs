@@ -59,6 +59,7 @@ const Carousel = (props) => {
               timeout={1000}
               classNames={textDirection}
             >
+            <div className="text-block">
               <h1
                 className={
                   carousel[activeIndex].title === carousel[2].title
@@ -68,7 +69,20 @@ const Carousel = (props) => {
               >
                 {carousel[activeIndex].title}
               </h1>
+              <h2
+                className={
+                  carousel[activeIndex].subTitle ===
+                  carousel[2].subTitle
+                    ? "subheading--oranges"
+                    : "subheading"
+                }
+              >
+                {carousel[activeIndex].subTitle}
+              </h2>
+            </div>
             </CSSTransition>
+
+            {/*
             <CSSTransition
               key={carousel[activeIndex].subTitle}
               timeout={1000}
@@ -84,7 +98,7 @@ const Carousel = (props) => {
               >
                 {carousel[activeIndex].subTitle}
               </h2>
-            </CSSTransition>
+              </CSSTransition> */}
           </TransitionGroup>
         </div>
       </div>
