@@ -6,131 +6,131 @@
       "cart_content": "2",
       "divider" : "|"
     },  
-      "menu": [
+  "menu": [
+    {
+      "title": "Search",
+      "path":"svg_icons/magnifying-glass-solid.svg"
+    },
+    {
+      "title": "Home",
+      "url": "#"
+    },
+    {
+      "title": "About",
+      "url": "#"
+    },
+    {
+      "title": "Menu",
+      "url": "#"
+    },
+    {
+      "title": "Blog",
+      "url": "#"
+    },
+    {
+      "title": "Features",
+      "isSubMenu": true,
+      "url": "#",
+      "path" : "svg_icons/angle-right-solid-black.svg",
+      "subMenu": [
         {
-          "title": "Search",
-          "path":"svg_icons/magnifying-glass-solid.svg"
-        },
-        {
-          "title": "Home",
+          "title": "One page",
           "url": "#"
         },
         {
-          "title": "About",
+          "title": "Protfolio",
           "url": "#"
         },
         {
-          "title": "Menu",
-          "url": "#"
-        },
-        {
-          "title": "Blog",
-          "url": "#"
-        },
-        {
-          "title": "Features",
-          "isSubMenu": true,
-          "url": "#",
-          "path" : "svg_icons/angle-right-solid-black.svg",
-          "subMenu": [
-            {
-              "title": "One page",
-              "url": "#"
-            },
-            {
-              "title": "Protfolio",
-              "url": "#"
-            },
-            {
-              "title": "Shortcodes",
-              "url": "#"
-            }
-          ]
-        },
-        {
-          "title": "Shop",
-          "url": "#"
-        },
-        {
-          "title": "Contact",
+          "title": "Shortcodes",
           "url": "#"
         }
-      ],
-      "carousel": [
-        {
-          "title": "Made with love",
-          "subTitle": "for you",
-          "altTag": "eggs and chicken",
-          "path": "images/carousel_img_1.png"
-        },
-        {
-          "title": "Made with hate",
-          "subTitle": "for myself",
-          "altTag": "something more",
-          "path": "images/carousel_img_2.png"
-        },
-        {
-          "title": "Oranges and     laptops",
-          "subTitle": "for everyone", 
-          "altTag": "oranges and laptops",
-          "path": "images/carousel_img_3.png"
-        }
-      ],
-      "about": {
-        "title": "About",
-        "subTitle": "we create delicious memories",
-        "text": "Renome it is renowned restaurant delights the senses with elegant ambiance, gracious service and delectable menus in the heart of Manhattan’s. The distinctive setting boasts contemporary furnishings and finishes atop the restaurant’s grand modern architecture. Renome offers the room for private dining where guests enjoy creative foods and sumptuous late night desserts. Is one of the few Manhattan restaurants to have a coveted 3-star Michelin rating.",
-        "aboutImages": [ 
-          {
-            "path": "images/about_img_1.png"
-          },
-
-          {
-            "path": "images/about_img_2.png"
-          }
-        ]
-      },
-      "gallery": {
-        "title": "Gallery",
-        "subTitle": "More about us via photos",
-        "galleryImages": [
-          {
-            "path": "images/gallery_img_1.png"
-          },
-          {
-            "path": "images/gallery_img_3.png" 
-          },
-          {
-            "path": "images/gallery_img_2.png"
-          },
-          {
-            "path": "images/gallery_img_6.png" 
-          },
-          {
-            "path": "images/gallery_img_5.png"
-          },
-          {
-            "path": "images/gallery_img_4.png"
-          }
-        ]
-      },
-
-      "footer": {
-        "followUs": "follow us:",
-        "title": "Renome",
-        "copyright" : "COPYRIGHT 2022 RENOME BY ESTETIQ",
-        "socialMedia": [
-          { 
-            "path": "svg_icons/facebook-square.svg"
-          },
-
-          { 
-            "path": "svg_icons/twitter-square.svg"
-          },
-
-          { 
-            "path": "svg_icons/google-plus-square.svg"         
-          }
-        ]
-      }
+      ]
+    },
+    {
+      "title": "Shop",
+      "url": "#"
+    },
+    {
+      "title": "Contact",
+      "url": "#"
     }
+  ],
+  "carousel": [
+    {
+      "title": "Made with love",
+      "subTitle": "for you",
+      "altTag": "eggs and chicken",
+      "path": "images/carousel_img_1.png"
+    },
+    {
+      "title": "Made with hate",
+      "subTitle": "for myself",
+      "altTag": "something more",
+      "path": "images/carousel_img_2.png"
+    },
+    {
+      "title": "Oranges and     laptops",
+      "subTitle": "for everyone", 
+      "altTag": "oranges and laptops",
+      "path": "images/carousel_img_3.png"
+    }
+  ],
+  "about": {
+    "title": "About",
+    "subTitle": "we create delicious memories",
+    "text": "Renome it is renowned restaurant delights the senses with elegant ambiance, gracious service and delectable menus in the heart of Manhattan’s. The distinctive setting boasts contemporary furnishings and finishes atop the restaurant’s grand modern architecture. Renome offers the room for private dining where guests enjoy creative foods and sumptuous late night desserts. Is one of the few Manhattan restaurants to have a coveted 3-star Michelin rating.",
+    "aboutImages": [ 
+      {
+        "path": "images/about_img_1.png"
+      },
+
+      {
+        "path": "images/about_img_2.png"
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subTitle": "More about us via photos",
+    "galleryImages": [
+      {
+        "path": "images/gallery_img_1.png"
+      },
+      {
+        "path": "images/gallery_img_3.png" 
+      },
+      {
+        "path": "images/gallery_img_2.png"
+      },
+      {
+        "path": "images/gallery_img_6.png" 
+      },
+      {
+        "path": "images/gallery_img_5.png"
+      },
+      {
+        "path": "images/gallery_img_4.png"
+      }
+    ]
+  },
+
+  "footer": {
+    "followUs": "follow us:",
+    "title": "Renome",
+    "copyright" : "COPYRIGHT 2022 RENOME BY ESTETIQ",
+    "socialMedia": [
+      { 
+        "path": "svg_icons/facebook-square.svg"
+      },
+
+      { 
+        "path": "svg_icons/twitter-square.svg"
+      },
+
+      { 
+        "path": "svg_icons/google-plus-square.svg"         
+      }
+    ]
+  }
+}
