@@ -1,4 +1,7 @@
 const SubNavigation = (props) => {
+
+  const {subnavigation} = props;
+  
   return (
     <div className="subnavigation">     
       <nav className="top-nav__sub-navigation" id="sub-nav">
