@@ -1,5 +1,5 @@
 import "./SubNavigation.scss";
-import Arrow from "./angle-left-solid-black.svg";
+import Arrow from "../../atoms/assets/svg/angle-left-solid-black.svg";
 
 const SubNavigation = ({ subnav, openSubmenu, backBtnMenu }) => {
   
