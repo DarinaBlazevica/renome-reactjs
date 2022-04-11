@@ -15,12 +15,15 @@ const TopNavigation = (props) => {
   const [openCart, setCart] = useState("top-nav__cart-menu");
   const [openSubmenu, setSubmenu] = useState("top-nav__sub-navigation");
 
+
+  
+
   const toggleMenu = () => {
     setHamburgerStyle(hamburgerStyle === "div" ? "change" : "div");
-    setMenu(showMenu === "top-nav__menu" ? "show" : "top-nav__menu");
+    setMenu(showMenu === "top-nav__menu" && openSubmenu === "top-nav__sub-navigation" ? "show" : "top-nav__menu");
     setCart("top-nav__cart-menu");
     setSubmenu("top-nav__sub-navigation");
-  };
+  }
 
   const toggleCart = () => {
     setCart(
@@ -38,6 +41,7 @@ const TopNavigation = (props) => {
         : "top-nav__sub-navigation"
     );
     setMenu("top-nav__menu");
+    setHamburgerStyle("change");
   };
 
   const closeSubMenu = () => {
