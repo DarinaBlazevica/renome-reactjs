@@ -4,7 +4,8 @@ $black: #000;
 $white: #fff;
 $hover: #d3d3d3;
 $subheading-color: #985e5b;
-$arial: Arial, sans-serif;
+$arial: Arial,
+sans-serif;
 
 
 .top-nav__menu {
@@ -42,7 +43,6 @@ $arial: Arial, sans-serif;
 
 .show a:first-child {
   display: flex;
-  text-transform: none;
   justify-content: space-between;
 }
 
@@ -82,6 +82,6 @@ $arial: Arial, sans-serif;
   outline: none;
 }
 
-input[type="text" i] {
+input[type="text"i] {
   padding: 0;
 }

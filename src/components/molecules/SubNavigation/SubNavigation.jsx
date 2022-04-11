@@ -1,23 +1,24 @@
-const SubNavigation = (props) => {
+import "./SubNavigation.scss";
+import Arrow from "./angle-left-solid-black.svg";
 
-  const {subnavigation} = props;
+const SubNavigation = ({ subnav, openSubmenu, backBtnMenu }) => {
   
+  const reduceItem = subnav.reduce((subMenu, item) => {
+    if (item.isSubMenu) return { ...subMenu, item };
+    return subMenu;
+  }, []);
+
   return (
-    <div className="subnavigation">     
-      <nav className="top-nav__sub-navigation" id="sub-nav">
-        <a className="top-nav__sub-navigation--back" id="sub-nav-back" href="#">
-          <button className="top-nav__sub-navigation--backbtn" id="btn__back">
-            <img
-              src="./svg_icons/angle-left-solid-black.svg"
-              alt="back button"
-            />
-          </button>
-          <p>Back</p>
-        </a>
-        <a href="#">One Page</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Shortcodes</a>
-      </nav>
+    <div className={openSubmenu}>
+      <a className="top-nav__sub-navigation__back" onClick={backBtnMenu}>
+        <button type="button" className="top-nav__sub-navigation__backbtn">
+          <img src={Arrow} alt="back_button" />
+        </button>
+        Back
+      </a>
+      {reduceItem.item.subMenu.map((subMenuItem, i) => {
+        return <a key={i}>{subMenuItem.title}</a>;
+      })}
     </div>
   );
 };
