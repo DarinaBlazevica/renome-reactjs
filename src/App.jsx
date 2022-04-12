@@ -5,6 +5,7 @@ import Carousel from "./components/organisms/Carousel/Carousel";
 import TopNavigation from "./components/organisms/TopNavigation/TopNavigation";
 import data from "./structure.json";
 import "./App.scss";
+import SubNavigation from "./components/molecules/SubNavigation/SubNavigation";
 
 const App = () => {
   return (

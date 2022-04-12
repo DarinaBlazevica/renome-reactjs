@@ -1,7 +1,6 @@
 import "./Menu.scss";
 
-const Menu = ({ menu, showMenu }) => {
-  
+const Menu = ({ menu, showMenu, openSubMenu }) => {
   const setMenuContent = (item, i) => {
     if (item.title === "Search") {
       return (
@@ -17,7 +16,12 @@ const Menu = ({ menu, showMenu }) => {
       );
     } else if (item.title === "Features") {
       return (
-        <a className="menu__feature" href={item.url} key={i}>
+        <a
+          className="menu__feature"
+          href={item.url}
+          key={i}
+          onClick={openSubMenu}
+        >
           {item.title}
           <button type="button" className="menu-feature__btn">
             <img src={item.path} alt="features-button" />

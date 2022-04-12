@@ -7,18 +7,6 @@
       "divider" : "|"
     },  
 
-  "subnav" : [
-    {
-      "title": "One Page"
-    },
-    {
-      "title": "Portfolio"
-    },
-    {
-      "title": "Shortcodes"
-    }
-  ],
-
   "menu": [
     {
       "title": "Search",

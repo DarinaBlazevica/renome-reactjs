@@ -4,17 +4,26 @@ import Menu from "../../molecules/Menu/Menu";
 import "./TopNavigation.scss";
 import "../../atoms/Buttons/Hamburger.scss";
 import CartMenu from "../../molecules/CartMenu/CartMenu";
+import SubNavigation from "../../molecules/SubNavigation/SubNavigation";
 
 const TopNavigation = (props) => {
+  const { topnav } = props;
+  const { menu } = props;
+
   const [hamburgerStyle, setHamburgerStyle] = useState("div");
   const [showMenu, setMenu] = useState("top-nav__menu");
   const [openCart, setCart] = useState("top-nav__cart-menu");
+  const [openSubmenu, setSubmenu] = useState("top-nav__sub-navigation");
+
+
+  
 
   const toggleMenu = () => {
     setHamburgerStyle(hamburgerStyle === "div" ? "change" : "div");
-    setMenu(showMenu === "top-nav__menu" ? "show" : "top-nav__menu");
+    setMenu(showMenu === "top-nav__menu" && openSubmenu === "top-nav__sub-navigation" ? "show" : "top-nav__menu");
     setCart("top-nav__cart-menu");
-  };
+    setSubmenu("top-nav__sub-navigation");
+  }
 
   const toggleCart = () => {
     setCart(
@@ -22,10 +31,25 @@ const TopNavigation = (props) => {
     );
     setMenu("top-nav__menu");
     setHamburgerStyle("div");
+    setSubmenu("top-nav__sub-navigation");
   };
 
-  const { topnav } = props;
-  const { menu } = props;
+  const openSubMenu = () => {
+    setSubmenu(
+      openSubmenu === "top-nav__sub-navigation"
+        ? "visible"
+        : "top-nav__sub-navigation"
+    );
+    setMenu("top-nav__menu");
+    setHamburgerStyle("change");
+  };
+
+  const closeSubMenu = () => {
+    setSubmenu(
+      openSubmenu === "visible" ? "top-nav__sub-navigation" : "visible"
+    );
+    setMenu("show");
+  };
 
   return (
     <nav className="top-nav">
@@ -47,7 +71,12 @@ const TopNavigation = (props) => {
           hamburgerStyle={hamburgerStyle}
         />
       </div>
-      <Menu showMenu={showMenu} menu={menu} />
+      <Menu showMenu={showMenu} menu={menu} openSubMenu={() => openSubMenu()} />
+      <SubNavigation
+        subnav={menu}
+        openSubmenu={openSubmenu}
+        backBtnMenu={() => closeSubMenu()}
+      />
     </nav>
   );
 };
