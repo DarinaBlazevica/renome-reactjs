@@ -1,9 +1,4 @@
-$axis: "Axis";
-$montserrat : "Montserrat";
-$black: #000;
-$white: #fff;
-$hover: #d3d3d3;
-$subheading-color: #985e5b;
+@import "../../../App.scss";
 
 .top-nav__sub-navigation {
   display: none;
