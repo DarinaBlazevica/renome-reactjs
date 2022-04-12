@@ -1,0 +1,58 @@
+@import "../../../App.scss";
+
+.top-nav__sub-navigation {
+  display: none;
+}
+
+.visible {
+  display: block;
+  width: 100%;
+  background-color: $white;
+  padding: 0 10px;
+  font-family: $axis;
+}
+
+.visible a {
+  display: block;
+  padding: 20px 5px;
+  font-size: 12px;
+  font-family: $axis;
+  color: $black;
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 1px solid $hover;
+  letter-spacing: 2px;
+}
+
+.visible a:hover {
+  color: $subheading-color;
+}
+
+.visible .top-nav__sub-navigation__back {
+  text-transform: uppercase;
+  align-items: center;
+  padding: 5px 5px 5px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.visible a:last-child {
+  border-bottom: none;
+}
+
+.top-nav__sub-navigation a:hover {
+  color: var(--subheading-color);
+}
+
+.top-nav__sub-navigation__backbtn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid $hover;
+  background-color: transparent;
+  margin-left: 10px;
+}
+
+.top-nav__sub-navigation__backbtn img {
+  width: 15px;
+  height: 13px;
+}
