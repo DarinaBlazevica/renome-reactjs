@@ -1,7 +1,8 @@
 @import "../../../App.scss";
 
+
 .top-nav__hamburger {
-    div {
+    .bar {
         width: 18px;
         height: 1.5px;
         background-color: $black;
@@ -11,7 +12,16 @@
     }
 }
 
-.top-nav__hamburger{
+.top-nav__hamburger {
+    .change {
+        width: 18px;
+        height: 1.5px;
+        background-color: $black;
+        margin: 5px 0px;
+        font-weight: 100;
+        transition: 0.4s;
+    }
+
     .change:first-child {
         transform: rotate(-45deg) translate(-4px, 5px);
     }

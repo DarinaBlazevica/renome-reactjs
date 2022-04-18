@@ -2,7 +2,7 @@ import "./SubNavigation.scss";
 import Arrow from "../../atoms/assets/svg/angle-left-solid-black.svg";
 import React, { useEffect, useRef } from "react";
 
-const SubNavigation = ({ subnav, setIsSubMenuOpen, backBtnMenu }) => {
+const SubNavigation = ({ subnav, setIsSubMenuOpen,setHamburgerStyle, backBtnMenu }) => {
   const reduceItem = subnav.reduce((subMenu, item) => {
     if (item.isSubMenu) return { ...subMenu, item };
     return subMenu;
@@ -13,6 +13,7 @@ const SubNavigation = ({ subnav, setIsSubMenuOpen, backBtnMenu }) => {
     const handler = (e) => {
       if (subMenuRef.current && !subMenuRef.current.contains(e.target)) {
         setIsSubMenuOpen(false);
+        setHamburgerStyle("bar");
       }
     };
 

@@ -1,13 +1,14 @@
 import "./Menu.scss";
 import React, { useEffect, useRef } from "react";
 
-const Menu = ({ menu, setIsMenuOpen, openSubMenu }) => {
+const Menu = ({ menu, setIsMenuOpen, setHamburgerStyle, openSubMenu }) => {
 
   const menuRef = useRef();
   useEffect(() => {
     const handler = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
         setIsMenuOpen(false);
+        setHamburgerStyle("bar");
       }
     };
 

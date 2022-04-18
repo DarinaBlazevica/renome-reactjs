@@ -11,13 +11,13 @@ const TopNavigation = (props) => {
   const { NavigationMenu } = props;
   const { Cart } = props;
 
-  const [hamburgerStyle, setHamburgerStyle] = useState("div");
+  const [hamburgerStyle, setHamburgerStyle] = useState("bar");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartMenuOpen, setIsCartMenuOpen] = useState(false);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setHamburgerStyle(hamburgerStyle === "div" ? "change" : "div");
+    setHamburgerStyle(hamburgerStyle === "bar" ? "change" : "bar");
     setIsMenuOpen(
       isMenuOpen === false && isSubMenuOpen === false ? !false : false
     );
@@ -28,7 +28,7 @@ const TopNavigation = (props) => {
   const toggleCart = () => {
     setIsCartMenuOpen(!false);
     setIsMenuOpen(false);
-    setHamburgerStyle("div");
+    setHamburgerStyle("bar");
   };
 
   const openSubMenu = () => {
@@ -67,6 +67,7 @@ const TopNavigation = (props) => {
       {isMenuOpen && (
         <Menu
           setIsMenuOpen={setIsMenuOpen}
+          setHamburgerStyle={setHamburgerStyle}
           menu={NavigationMenu}
           openSubMenu={() => openSubMenu()}
         />
@@ -75,6 +76,7 @@ const TopNavigation = (props) => {
         <SubNavigation
           subnav={NavigationMenu}
           setIsSubMenuOpen={setIsSubMenuOpen}
+          setHamburgerStyle={setHamburgerStyle}
           backBtnMenu={() => closeSubMenu()}
         />
       )}
