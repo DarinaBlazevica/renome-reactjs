@@ -1,6 +1,23 @@
 import "./Menu.scss";
+import React, { useEffect, useRef } from "react";
 
-const Menu = ({ menu, showMenu, openSubMenu }) => {
+const Menu = ({ menu, setIsMenuOpen, openSubMenu }) => {
+
+  const menuRef = useRef();
+  useEffect(() => {
+    const handler = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handler);
+
+    return () => {
+      document.removeEventListener("click", handler);
+    };
+  });
+
   const setMenuContent = (item, i) => {
     if (item.title === "Search") {
       return (
@@ -37,7 +54,7 @@ const Menu = ({ menu, showMenu, openSubMenu }) => {
     }
   };
   return (
-    <div className={showMenu}>
+    <div className="show" ref = {menuRef}>
       {menu.map((item, i) => {
         return setMenuContent(item, i);
       })}

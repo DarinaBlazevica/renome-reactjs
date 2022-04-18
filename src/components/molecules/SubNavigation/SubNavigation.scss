@@ -1,9 +1,5 @@
 @import "../../../App.scss";
 
-.top-nav__sub-navigation {
-  display: none;
-}
-
 .visible {
   display: block;
   width: 100%;
@@ -12,7 +8,7 @@
   font-family: $axis;
 }
 
-.visible a {
+.visible div {
   display: block;
   padding: 20px 5px;
   font-size: 12px;
