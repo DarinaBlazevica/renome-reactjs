@@ -7,9 +7,7 @@ import CartMenu from "../../molecules/CartMenu/CartMenu";
 import SubNavigation from "../../molecules/SubNavigation/SubNavigation";
 
 const TopNavigation = (props) => {
-  const { TopNav } = props;
-  const { NavigationMenu } = props;
-  const { Cart } = props;
+  const { TopNav, NavigationMenu, Cart } = props;
 
   const [hamburgerStyle, setHamburgerStyle] = useState("bar");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,26 +17,26 @@ const TopNavigation = (props) => {
   const toggleMenu = () => {
     setHamburgerStyle(hamburgerStyle === "bar" ? "change" : "bar");
     setIsMenuOpen(
-      isMenuOpen === false && isSubMenuOpen === false ? !false : false
+      isMenuOpen === false && isSubMenuOpen === false ? true : false
     );
     setIsCartMenuOpen(false);
     setIsSubMenuOpen(false);
   };
 
   const toggleCart = () => {
-    setIsCartMenuOpen(!false);
+    setIsCartMenuOpen(true);
     setIsMenuOpen(false);
     setHamburgerStyle("bar");
   };
 
   const openSubMenu = () => {
-    setIsSubMenuOpen(!false);
+    setIsSubMenuOpen(true);
     setIsMenuOpen(false);
   };
 
   const closeSubMenu = () => {
     setIsSubMenuOpen(false);
-    setIsMenuOpen(!false);
+    setIsMenuOpen(true);
   };
 
   return (

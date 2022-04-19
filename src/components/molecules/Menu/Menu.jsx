@@ -22,15 +22,15 @@ const Menu = ({ menu, setIsMenuOpen, setHamburgerStyle, openSubMenu }) => {
   const setMenuContent = (item, i) => {
     if (item.title === "Search") {
       return (
-        <a key={i}>
+        <div className="search__section" key={i}>
           <input
             type="text"
-            id="search"
+            className="search"
             placeholder="Search..."
             title="Type in a category"
           />
           <img className="search-icon" src={item.path} alt="search-bar" />
-        </a>
+        </div>
       );
     } else if (item.title === "Features") {
       return (
@@ -55,7 +55,7 @@ const Menu = ({ menu, setIsMenuOpen, setHamburgerStyle, openSubMenu }) => {
     }
   };
   return (
-    <div className="show" ref = {menuRef}>
+    <div className="menu" ref = {menuRef}>
       {menu.map((item, i) => {
         return setMenuContent(item, i);
       })}
