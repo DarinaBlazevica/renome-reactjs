@@ -1,6 +1,6 @@
 @import "../../../App.scss";
 
-.visible {
+.sub-menu {
   display: block;
   width: 100%;
   background-color: $white;
@@ -8,7 +8,7 @@
   font-family: $axis;
 }
 
-.visible div {
+.sub-menu div {
   display: block;
   padding: 20px 5px;
   font-size: 12px;
@@ -20,11 +20,11 @@
   letter-spacing: 2px;
 }
 
-.visible a:hover {
+.sub-menu div:hover {
   color: $subheading-color;
 }
 
-.visible .top-nav__sub-navigation__back {
+.sub-menu .top-nav__sub-navigation__back {
   text-transform: uppercase;
   align-items: center;
   padding: 5px 5px 5px 0px;
@@ -32,7 +32,7 @@
   justify-content: space-between;
 }
 
-.visible a:last-child {
+.sub-menu a:last-child {
   border-bottom: none;
 }
 
@@ -51,4 +51,11 @@
 .top-nav__sub-navigation__backbtn img {
   width: 15px;
   height: 13px;
+}
+
+@media (max-height: 300px) {
+  .sub-menu  {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
 }

@@ -25,7 +25,7 @@ const SubNavigation = ({ subnav, setIsSubMenuOpen,setHamburgerStyle, backBtnMenu
   });
 
   return (
-    <div className="visible" ref={subMenuRef}>
+    <div className="sub-menu" ref={subMenuRef}>
       <div className="top-nav__sub-navigation__back" onClick={backBtnMenu}>
         <button type="button" className="top-nav__sub-navigation__backbtn">
           <img src={Arrow} alt="back_button" />
