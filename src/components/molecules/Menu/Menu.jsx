@@ -1,23 +1,8 @@
 import "./Menu.scss";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 
-const Menu = ({ menu, setIsMenuOpen, setHamburgerStyle, openSubMenu }) => {
-
-  const menuRef = useRef();
-  useEffect(() => {
-    const handler = (e) => {
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
-        setIsMenuOpen(false);
-        setHamburgerStyle("bar");
-      }
-    };
-
-    document.addEventListener("click", handler);
-
-    return () => {
-      document.removeEventListener("click", handler);
-    };
-  });
+const Menu = React.forwardRef((props, ref) => {
+  const { menu, openSubMenu } = props;
 
   const setMenuContent = (item, i) => {
     if (item.title === "Search") {
@@ -55,11 +40,11 @@ const Menu = ({ menu, setIsMenuOpen, setHamburgerStyle, openSubMenu }) => {
     }
   };
   return (
-    <div className="menu" ref = {menuRef}>
+    <div className="menu" ref={ref}>
       {menu.map((item, i) => {
         return setMenuContent(item, i);
       })}
     </div>
   );
-};
+});
 export default Menu;

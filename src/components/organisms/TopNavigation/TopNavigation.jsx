@@ -1,18 +1,56 @@
-import React, { useState } from "react";
 import Hamburger from "../../atoms/Buttons/Hamburger";
 import Menu from "../../molecules/Menu/Menu";
 import "./TopNavigation.scss";
 import "../../atoms/Buttons/Hamburger.scss";
 import CartMenu from "../../molecules/CartMenu/CartMenu";
 import SubNavigation from "../../molecules/SubNavigation/SubNavigation";
+import React, { useEffect, useRef, useState } from "react";
 
 const TopNavigation = (props) => {
   const { TopNav, NavigationMenu, Cart } = props;
 
-  const [hamburgerStyle, setHamburgerStyle] = useState("bar");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartMenuOpen, setIsCartMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hamburgerStyle, setHamburgerStyle] = useState("bar");
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+  
+  const menuRef = useRef();
+  const cartRef = useRef();
+  const subMenuRef = useRef();
+
+  useEffect(() => {
+    const handler = (e) => {
+      if (
+        cartRef.current &&
+        !cartRef.current.contains(e.target) &&
+        isCartMenuOpen === true
+      ) {
+        setIsCartMenuOpen(false);
+      }
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(e.target) &&
+        isMenuOpen === true
+      ) {
+        setIsMenuOpen(false);
+        setHamburgerStyle("bar");
+      }
+      if (
+        subMenuRef.current &&
+        !subMenuRef.current.contains(e.target) &&
+        isSubMenuOpen === true
+      ) {
+        setIsSubMenuOpen(false);
+        setHamburgerStyle("bar");
+      }
+    };
+
+    document.addEventListener("click", handler);
+
+    return () => {
+      document.removeEventListener("click", handler);
+    };
+  });
 
   const toggleMenu = () => {
     setHamburgerStyle(hamburgerStyle === "bar" ? "change" : "bar");
@@ -45,9 +83,7 @@ const TopNavigation = (props) => {
         <div className="renome">{TopNav.title}</div>
       </div>
       <div className="top-nav__cart-block">
-        {isCartMenuOpen && (
-          <CartMenu cart={Cart} setIsCartMenuOpen={setIsCartMenuOpen} />
-        )}
+        {isCartMenuOpen && <CartMenu cart={Cart} ref={cartRef} />}
         <img
           className="top-nav__shopping-cart"
           src={TopNav.cart}
@@ -58,23 +94,21 @@ const TopNavigation = (props) => {
         <div className="top-nav__cart-count">{TopNav.cart_content}</div>
         <div className="top-nav__divider">{TopNav.divider}</div>
         <Hamburger
-          toggleMenu={() => toggleMenu()}
+          toggleBurger={() => toggleMenu()}
           hamburgerStyle={hamburgerStyle}
         />
       </div>
       {isMenuOpen && (
         <Menu
-          setIsMenuOpen={setIsMenuOpen}
-          setHamburgerStyle={setHamburgerStyle}
           menu={NavigationMenu}
           openSubMenu={() => openSubMenu()}
+          ref={menuRef}
         />
       )}
       {isSubMenuOpen && (
         <SubNavigation
+          ref={subMenuRef}
           subnav={NavigationMenu}
-          setIsSubMenuOpen={setIsSubMenuOpen}
-          setHamburgerStyle={setHamburgerStyle}
           backBtnMenu={() => closeSubMenu()}
         />
       )}

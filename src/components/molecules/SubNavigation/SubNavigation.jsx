@@ -1,31 +1,17 @@
 import "./SubNavigation.scss";
 import Arrow from "../../atoms/assets/svg/angle-left-solid-black.svg";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 
-const SubNavigation = ({ subnav, setIsSubMenuOpen,setHamburgerStyle, backBtnMenu }) => {
+const SubNavigation = React.forwardRef((props, ref) => {
+  const { subnav, backBtnMenu } = props;
+
   const reduceItem = subnav.reduce((subMenu, item) => {
     if (item.isSubMenu) return { ...subMenu, item };
     return subMenu;
   }, []);
 
-  const subMenuRef = useRef();
-  useEffect(() => {
-    const handler = (e) => {
-      if (subMenuRef.current && !subMenuRef.current.contains(e.target)) {
-        setIsSubMenuOpen(false);
-        setHamburgerStyle("bar");
-      }
-    };
-
-    document.addEventListener("click", handler);
-
-    return () => {
-      document.removeEventListener("click", handler);
-    };
-  });
-
   return (
-    <div className="sub-menu" ref={subMenuRef}>
+    <div className="sub-menu" ref={ref}>
       <div className="top-nav__sub-navigation__back" onClick={backBtnMenu}>
         <button type="button" className="top-nav__sub-navigation__backbtn">
           <img src={Arrow} alt="back_button" />
@@ -37,5 +23,5 @@ const SubNavigation = ({ subnav, setIsSubMenuOpen,setHamburgerStyle, backBtnMenu
       })}
     </div>
   );
-};
+});
 export default SubNavigation;
