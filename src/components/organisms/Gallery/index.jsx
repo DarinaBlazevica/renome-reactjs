@@ -1,4 +1,4 @@
-import GalleryGrid from "../../molecules/GalleryGrid/GalleryGrid";
+import GalleryGrid from "../../molecules/GalleryGrid";
 import "./Gallery.scss";
 
 const Gallery = (props) => {

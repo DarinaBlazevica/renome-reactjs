@@ -1,4 +1,4 @@
-import SocialMedia from "../../molecules/SocialMedia/SocialMedia";
+import SocialMedia from "../../molecules/SocialMedia";
 import "./Footer.scss";
 
 const Footer = (props) => {

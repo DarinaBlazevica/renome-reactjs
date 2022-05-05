@@ -1,9 +1,9 @@
-import Hamburger from "../../atoms/Buttons/Hamburger";
-import Menu from "../../molecules/Menu/Menu";
+import Hamburger from "../../atoms/Buttons/Hamburger"
+import Menu from "../../molecules/Menu";
 import "./TopNavigation.scss";
 import "../../atoms/Buttons/Hamburger.scss";
-import CartMenu from "../../molecules/CartMenu/CartMenu";
-import SubNavigation from "../../molecules/SubNavigation/SubNavigation";
+import CartMenu from "../../molecules/CartMenu";
+import SubNavigation from "../../molecules/SubNavigation";
 import React, { useEffect, useRef, useState } from "react";
 
 const TopNavigation = (props) => {

@@ -1,4 +1,4 @@
-import Wrapper from "./components/organisms/Wrapper/Wrapper";
+import Wrapper from "./components/organisms/Wrapper";
 import data from "./structure.json";
 import "./App.scss";
 

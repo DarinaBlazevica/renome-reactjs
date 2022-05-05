@@ -1,8 +1,8 @@
-import About from "../About/About";
-import Carousel from "../Carousel/Carousel";
-import TopNavigation from "../TopNavigation/TopNavigation";
-import Gallery from "../Gallery/Gallery";
-import Footer from "../Footer/Footer";
+import About from "../About";
+import Carousel from "../Carousel";
+import TopNavigation from "../TopNavigation";
+import Gallery from "../Gallery";
+import Footer from "../Footer";
 import React from "react";
 
 const Wrapper = (props) => {
