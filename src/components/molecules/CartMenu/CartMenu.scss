@@ -1,9 +1,5 @@
 @import "../../../App.scss";
 
-.top-nav__cart-menu {
-  display: none;
-}
-
 .openCart {
   display: block;
   width: 115px;
@@ -15,7 +11,7 @@
   text-decoration: none;
 }
 
-.openCart p {
+.openCart div {
   font-weight: 700;
   font-size: 10px;
   font-family: $axis;

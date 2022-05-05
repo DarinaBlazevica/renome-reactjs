@@ -1,8 +1,9 @@
 import "./Hamburger.scss";
 
-const Hamburger = ({toggleMenu, hamburgerStyle}) => {  
+const Hamburger = ({toggleBurger, hamburgerStyle}) => { 
+
     return(
-    <div className="top-nav__hamburger" onClick={toggleMenu} id="burger">
+    <div className="top-nav__hamburger" onClick={toggleBurger}>
         <div className={hamburgerStyle}></div>
         <div className={hamburgerStyle}></div>
         <div className={hamburgerStyle}></div>

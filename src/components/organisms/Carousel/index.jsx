@@ -5,7 +5,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const Carousel = (props) => {
 
-  const {carousel} = props;
+  const {CarouselSlider} = props;
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [imageDirection, setImageDirection] = useState("slide-right");
@@ -14,7 +14,7 @@ const Carousel = (props) => {
   const slidePrev = () => {
     const nextIndex = activeIndex - 1;
     if (nextIndex < 0) {
-      setActiveIndex(carousel.length - 1);
+      setActiveIndex(CarouselSlider.length - 1);
     } else {
       setActiveIndex(nextIndex);
     }
@@ -23,7 +23,7 @@ const Carousel = (props) => {
   };
 
   const slideNext = () => {
-    setActiveIndex((activeIndex + 1) % carousel.length);
+    setActiveIndex((activeIndex + 1) % CarouselSlider.length);
     setImageDirection("slide-right");
     setTextDirection("slide_text-right");
   };
@@ -44,61 +44,43 @@ const Carousel = (props) => {
         <div className="carousel__slider__image-slider">
           <TransitionGroup childFactory={cloneImage(imageDirection)}>
             <CSSTransition
-              key={carousel[activeIndex].path}
+              key={CarouselSlider[activeIndex].path}
               timeout={1000}
               classNames={imageDirection}
             >
-              <img src={carousel[activeIndex].path} alt="carousel" />
+              <img src={CarouselSlider[activeIndex].path} alt={CarouselSlider[activeIndex].altTag}/>
             </CSSTransition>
           </TransitionGroup>
         </div>
         <div className="carousel__slider__text-slider">
           <TransitionGroup childFactory={cloneText(textDirection)}>
             <CSSTransition
-              key={carousel[activeIndex].title}
+              key={CarouselSlider[activeIndex].title}
               timeout={1000}
               classNames={textDirection}
             >
             <div className="text-block">
               <h1
                 className={
-                  carousel[activeIndex].title === carousel[2].title
+                  CarouselSlider[activeIndex].title === CarouselSlider[2].title
                     ? "heading--oranges"
                     : "heading"
                 }
               >
-                {carousel[activeIndex].title}
+                {CarouselSlider[activeIndex].title}
               </h1>
               <h2
                 className={
-                  carousel[activeIndex].subTitle ===
-                  carousel[2].subTitle
+                  CarouselSlider[activeIndex].subTitle ===
+                  CarouselSlider[2].subTitle
                     ? "subheading--oranges"
                     : "subheading"
                 }
               >
-                {carousel[activeIndex].subTitle}
+                {CarouselSlider[activeIndex].subTitle}
               </h2>
             </div>
             </CSSTransition>
-
-            {/*
-            <CSSTransition
-              key={carousel[activeIndex].subTitle}
-              timeout={1000}
-              classNames={textDirection}
-            >
-              <h2
-                className={
-                  carousel[activeIndex].subTitle ===
-                  carousel[2].subTitle
-                    ? "subheading--oranges"
-                    : "subheading"
-                }
-              >
-                {carousel[activeIndex].subTitle}
-              </h2>
-              </CSSTransition> */}
           </TransitionGroup>
         </div>
       </div>
