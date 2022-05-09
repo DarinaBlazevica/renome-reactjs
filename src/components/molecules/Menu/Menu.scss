@@ -1,10 +1,6 @@
 @import "../../../App.scss";
 
-.top-nav__menu {
-  display: none;
-}
-
-.show {
+.menu {
   display: block;
   width: 100%;
   background-color: $white;
@@ -13,7 +9,7 @@
   overflow-y: auto;
 }
 
-.show a {
+.menu a {
   display: block;
   padding: 20px 5px;
   font-size: 12px;
@@ -26,23 +22,29 @@
   letter-spacing: 2px;
 }
 
-.show .menu__feature {
+.menu .menu__feature {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px 0px 5px 5px;
 }
 
-.show a:first-child {
+.menu .search__section {
+  display: block;
+  padding: 20px 5px;
+  font-size: 12px;
+  font-family: $axis;
+  border-bottom: 1px solid $hover;
+  letter-spacing: 2px;
   display: flex;
   justify-content: space-between;
 }
 
-.show a:last-child {
+.menu a:last-child {
   border-bottom: none;
 }
 
-.show a:hover {
+.menu a:hover {
   color: $subheading-color;
 }
 
@@ -65,15 +67,26 @@
   height: 15px;
 }
 
-#search {
-  width: 50%;
+.search {
   border: none;
   background-color: transparent;
   letter-spacing: 2px;
   font-weight: 700;
   outline: none;
+  flex-grow: 2;
 }
 
-input[type= "text"] {
+input[type="text"] {
   padding: 0;
+}
+
+.disable__scroll {
+  overflow-y: hidden;
+}
+
+@media (max-height: 480px) {
+  .menu {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
 }

@@ -1,12 +1,12 @@
 import "./GalleryGrid.scss";
 
 const GalleryGrid = (props) => {
+  const { galleryGrid } = props;
+
   return (
     <div className="gallery__images">
-      {props.galleryGrid.map((item, i) => (
-        <div key={i}>
-          <img src={item.path} alt="galleryimg" />
-        </div>
+      {galleryGrid.map((item, i) => (
+        <img key={i} src={item.path} alt={item.alt} />
       ))}
     </div>
   );
