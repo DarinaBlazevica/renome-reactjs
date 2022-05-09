@@ -1,90 +1,104 @@
 import Arrow from "../../atoms/Buttons/Arrow";
 import React, { useState } from "react";
 import "./Carousel.scss";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const Carousel = (props) => {
+  const { CarouselSlider } = props;
 
-  const {CarouselSlider} = props;
+  const [justifyContent, setJustifyContent] = useState(
+    "carousel-container__carousel"
+  );
+  const [slideDirection, setSlideDirection] = useState(
+    "carousel-container__carousel__slider"
+  );
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [imageDirection, setImageDirection] = useState("slide-right");
-  const [textDirection, setTextDirection] = useState("slide_text-right");
+  const [justifyTextContent, setJustifyTextContent] = useState(
+    "carousel-text-container__text-carousel"
+  );
+  const [textSlideDirection, setTextSlideDirection] = useState(
+    "carousel-text-container__text-slider"
+  );
 
-  const slidePrev = () => {
-    const nextIndex = activeIndex - 1;
-    if (nextIndex < 0) {
-      setActiveIndex(CarouselSlider.length - 1);
-    } else {
-      setActiveIndex(nextIndex);
-    }
-    setImageDirection("slide-left");
-    setTextDirection("slide_text-left");
-  };
+  const [direction, setDirection] = useState(-1);
+
+  const [disabled, setDisable] = useState(false);
 
   const slideNext = () => {
-    setActiveIndex((activeIndex + 1) % CarouselSlider.length);
-    setImageDirection("slide-right");
-    setTextDirection("slide_text-right");
+    if (direction === 1) {
+      setDirection(-1);
+      CarouselSlider.unshift(CarouselSlider.pop());
+    }
+    setJustifyContent("carousel-container__carousel justifyNext");
+    setSlideDirection("carousel-container__carousel__slider slideNext");
+
+    setJustifyTextContent("carousel-text-container__text-carousel justifyNext");
+    setTextSlideDirection("carousel-text-container__text-slider slideNext");
+    setDisable(true);
   };
 
-  const cloneImage = (imageDirection) => (child) =>
-    React.cloneElement(child, {
-      classNames: imageDirection,
-    });
+  const slidePrev = () => {
+    if (direction === -1) {
+      setDirection(1);
+      CarouselSlider.push(CarouselSlider.shift());
+    }
 
-  const cloneText = (textDirection) => (child) =>
-    React.cloneElement(child, {
-      classNames: textDirection,
-    });
+    setJustifyContent("carousel-container__carousel justifyPrevious");
+    setSlideDirection("carousel-container__carousel__slider slidePrevious");
+
+    setJustifyTextContent(
+      "carousel-text-container__text-carousel justifyPrevious"
+    );
+    setTextSlideDirection("carousel-text-container__text-slider slidePrevious");
+    setDisable(true);
+  };
+
+  const slideShow = () => {
+    if (direction === 1) {
+      CarouselSlider.unshift(CarouselSlider.pop());
+    } else {
+      CarouselSlider.push(CarouselSlider.shift());
+    }
+    setSlideDirection("carousel-container__carousel__slider resetSlide");
+    setTextSlideDirection("carousel-text-container__text-slider resetSlide");
+    setDisable(false);
+  };
 
   return (
-    <div className="carousel">
-      <div className="carousel__slider">
-        <div className="carousel__slider__image-slider">
-          <TransitionGroup childFactory={cloneImage(imageDirection)}>
-            <CSSTransition
-              key={CarouselSlider[activeIndex].path}
-              timeout={1000}
-              classNames={imageDirection}
-            >
-              <img src={CarouselSlider[activeIndex].path} alt={CarouselSlider[activeIndex].altTag}/>
-            </CSSTransition>
-          </TransitionGroup>
+    <div className="carousel-container">
+      <div className={justifyContent}>
+        <div className={slideDirection} onTransitionEnd={() => slideShow()}>
+          {CarouselSlider.map((item, i) => (
+            <section key={i}>
+              <img src={item.path} alt={item.altTag} />
+            </section>
+          ))}
         </div>
-        <div className="carousel__slider__text-slider">
-          <TransitionGroup childFactory={cloneText(textDirection)}>
-            <CSSTransition
-              key={CarouselSlider[activeIndex].title}
-              timeout={1000}
-              classNames={textDirection}
-            >
-            <div className="text-block">
-              <h1
-                className={
-                  CarouselSlider[activeIndex].title === CarouselSlider[2].title
-                    ? "heading--oranges"
-                    : "heading"
-                }
-              >
-                {CarouselSlider[activeIndex].title}
-              </h1>
-              <h2
-                className={
-                  CarouselSlider[activeIndex].subTitle ===
-                  CarouselSlider[2].subTitle
-                    ? "subheading--oranges"
-                    : "subheading"
-                }
-              >
-                {CarouselSlider[activeIndex].subTitle}
-              </h2>
+        <div className="carousel-text-container">
+          <div className={justifyTextContent}>
+            <div className={textSlideDirection}>
+              {CarouselSlider.map((item, i) => (
+                <section key={i}>
+                  <h1>{item.title}</h1>
+                  <h2
+                    className={
+                      item.subTitle === "for everyone"
+                        ? "subheading--oranges"
+                        : "subheading"
+                    }
+                  >
+                    {item.subTitle}
+                  </h2>
+                </section>
+              ))}
             </div>
-            </CSSTransition>
-          </TransitionGroup>
+          </div>
         </div>
       </div>
-      <Arrow slideNext={() => slideNext()} slidePrev={() => slidePrev()} />
+      <Arrow
+        slideNext={() => slideNext()}
+        slidePrev={() => slidePrev()}
+        disabled={disabled}
+      />
     </div>
   );
 };

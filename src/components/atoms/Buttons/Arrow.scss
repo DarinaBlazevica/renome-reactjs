@@ -4,11 +4,10 @@ $width: 55px;
 $height: 55px;
 
 .carousel__arrow {
-  position: relative;
+  position: absolute;
   left: 18px;
-  bottom: 18px;
+  bottom: 50px;
   width: 130px;
-  margin-top: 114%;
 }
 
 .carousel__arrow--right {
